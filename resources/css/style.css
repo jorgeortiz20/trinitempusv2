@@ -1,0 +1,110 @@
+/*CONFIGURACION GENERAL*/
+*{
+    box-sizing: border-box;
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.row>*{
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+h2{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+    color: #575757;
+    margin-bottom: 20px;
+}
+
+
+
+/* VISTAS PRINCIPAL Y RESGISTRO*/
+.seccion-logeo{
+    background: #2d3748;
+    color: #e2e8f0;
+    height: 100%;
+    padding-top: 50px;
+    z-index: 1;
+}
+
+.informacion-menu-principal{
+    bottom: 5%;
+    position: absolute;
+    width: 100%;
+}
+
+.logo-slogan{
+    background-image: url(../../public/img/background-indexN.jpg);
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: auto;
+    position: relative;
+    padding:60px 0;
+}
+
+.logo-slogan p{
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #E2E2E1;
+    font-size: 30px;
+    padding: 10px 20px;
+}
+
+.formulario-filtro, .servicios-top, .formulario-login{
+    padding: 60px 0;
+}
+
+.servicios-top{
+    background: #e9e9e9;
+}
+
+@media (max-width: 768px){
+    .burger{
+        position: fixed;
+        z-index: 2;
+        padding: 10px 0;
+        background: rgba(45,55,72,0.75);
+    }
+
+    .seccion-logeo{
+        background: rgba(45,55,72,0.97);
+    }
+}
+
+
+
+
+
+
+
+
+.seccion-perfil{
+    position: absolute;
+    position: fixed;
+    height: 100%;
+}
+
+.seccion-contendio{
+    position: absolute;
+}
+
+footer{
+    background: aquamarine;
+    display: flex;
+    justify-content: space-around;
+    bottom: 0;
+}
+
+footer p{
+    color: #cbd5e0;
+}
