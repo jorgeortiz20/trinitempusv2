@@ -41,6 +41,8 @@ Route::get('/mis-ofertas', function () {
     return view('mis-ofertas');
 });
 
+// Control de usuarios - LoginController
+
 Route::get('/login',
     [App\Http\Controllers\LoginController::class,'frmLogeo'])
     ->name('login');
@@ -51,11 +53,16 @@ Route::post('/login',
 Route::get('/logout', [
     App\Http\Controllers\LoginController::class,'logout'
 ]);
+
+// Control de usuarios - UsersController
+
+Route::post('usuario/registro', [
+    App\Http\Controllers\UsersController::class, 'registrarUsuario'
+]);
+
+// Control de usuarios - DIRECTO - editar perfil
 Route::get('editar-perfil',function() {
     return view('editar-perfil');
 });
 
-//ACCION CONTROLADORES
-Route::post('/confirmacionRegistro', [
-    App\Http\Controllers\UsersController::class, 'registrarUsuario'
-]);
+

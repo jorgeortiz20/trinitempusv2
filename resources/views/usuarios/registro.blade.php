@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>TriniTempus</title>
+    <title>TriniTempus - Registro de Usuario</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
@@ -23,8 +23,6 @@
 
     <link rel="stylesheet" href="../resources/css/style.css">
 </head>
-
-
 <body id="body-bg" class="container-fluid">
 <div class="row position-relative">
 
@@ -38,15 +36,39 @@
                 <section class="seccion-logeo col-md-3 col-xs-12 position-fixed end-0 top-0 text-center">
                     <img src="{{url('\img\profile.png')}}" alt="Imagen de perfil">
 
-                    <form class="formulario-login"  action="{{url('/login')}}" method="post">
+                    <form class="formulario-login" action="{{url('/usuario/registro')}}" method="POST">
+                        @csrf
                         <div class="offset-1 col-10 mb-2">
-                            <input type="text" class="form-control" name="email" placeholder="E-mail usuario...">
+                            <input type="text" class="form-control" name="nombreUsuario" placeholder="Nombre...">
                         </div>
-                        <div class="offset-1 col-10 mb-4">
+                        <div class="offset-1 col-10 mb-2">
+                            <input type="text" class="form-control" name="apellidoUsuario" placeholder="Apellidos...">
+                        </div>
+                        <div class="offset-1 col-10 mb-2">
+                            <input type="text" class="form-control" name="nickname" placeholder="Nick de usuario...">
+                        </div>
+                        <div class="offset-1 col-10 mb-2">
                             <input type="password" class="form-control" name="password" placeholder="Contraseña...">
                         </div>
-                        <button type="submit" class="btn btn-primary">Entrar</button>
-                        <a href="{{url('/login')}}"><button type="button" class="btn btn-secondary">Registrarse</button></a>
+                        <div class="offset-1 col-10 mb-2">
+                            <input type="email" class="form-control" name="email" placeholder="Email...">
+                        </div>
+                        <div class="offset-1 col-10 mb-2">
+                            <input type="date" class="form-control" name="fechaNacimiento">
+                        </div>
+                        <div class="offset-1 col-10 mb-2">
+                            <input type="number" class="form-control" name="telefonoContacto" placeholder="Teléfono...">
+                        </div>
+                        <div class="offset-1 col-10 mb-4">
+                            <select type="text" class="form-control" name="ciudadResidencia" >
+                                <option value="Salamanca">Salamanca</option>
+                                <option value="Avila">Ávila</option>
+                                <option value="Madrid">Madrid</option>
+                            </select>
+                        </div>
+
+                        <a href="{{url('/')}}"><button type="button" class="btn btn-secondary">Volver</button></a>
+                        <button type="submit" class="btn btn-primary">Registrar</button>
                     </form>
 
                     <ul class="informacion-menu-principal" >
@@ -71,20 +93,10 @@
             <h2>Encuentra la mejor oferta</h2>
             <form action="/ofertas/filtro">
                 <div class="offset-3 col-6 mb-2">
-                    <select name="ciudades" class="form-control">
-                        <option value="salamanca">Salamanca</option>
-                        <option value="zamora">Zamora</option>
-                        <option value="leon">Leon</option>
-                    </select>
-                    <!-- <input type="text" class="form-control" name="ciudad" placeholder="Ciudad..."> -->
+                    <input type="text" class="form-control" name="ciudad" placeholder="Ciudad...">
                 </div>
                 <div class="offset-3 col-6 mb-3">
-                    <select name="categorias" class="form-control">
-                        <option value="categoria1">Categoria 1</option>
-                        <option value="categoria2">Categoria 2</option>
-                        <option value="categoria3">Categoria 3</option>
-                    </select>
-                    <!-- <input type="text" class="form-control" name="categoria" placeholder="Categoria...">*/ -->
+                    <input type="text" class="form-control" name="categoria" placeholder="Categoria...">
                 </div>
                 <button type="submit" class="btn btn-primary">Filtrar</button>
             </form>

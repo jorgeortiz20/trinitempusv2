@@ -16,9 +16,9 @@ class LoginController extends Controller{
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return view ('home');
+            return view ('mis-ofertas');
         }
-        return view('login')->with('notice','Usuario no registrado');
+        return view('principal')->with('notice','Usuario no registrado');
     }
 
     public function logout(Request $request)
