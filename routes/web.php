@@ -41,6 +41,13 @@ Route::get('/mis-ofertas', function () {
     return view('mis-ofertas');
 });
 
+//Gestión parte privada - Mis Ofertas
+
+Route::resource('mis-ofertas',
+    OfertasController::class)
+    ->middleware('auth');
+
+
 // Control de usuarios - LoginController
 
 Route::get('/login',

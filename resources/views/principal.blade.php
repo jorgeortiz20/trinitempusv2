@@ -39,6 +39,7 @@
                     <img src="{{url('\img\profile.png')}}" alt="Imagen de perfil">
 
                     <form class="formulario-login"  action="{{url('/login')}}" method="post">
+                        @csrf
                         <div class="offset-1 col-10 mb-2">
                             <input type="text" class="form-control" name="email" placeholder="E-mail usuario...">
                         </div>
