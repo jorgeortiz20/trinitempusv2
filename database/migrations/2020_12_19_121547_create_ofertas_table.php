@@ -15,12 +15,12 @@ class CreateOfertasTable extends Migration
     {
         Schema::create('ofertas', function (Blueprint $table) {
             $table-> string('nombreOferta');
-            $table-> bigInteger( 'idCategoria');
+            $table-> bigInteger( 'categoria_id');  // Modificado by Pepe
             $table ->integer( 'tiempoDiarioOfrece');
             $table ->date('fechaPuedeIniciar');
             $table ->date('fechaDebeAcabar');
-            $table ->string('fotoOferta');
-            $table ->bigInteger('idUser');
+            $table ->string('fotoOferta')->nullable();
+            $table ->bigInteger('user_id');     // Modificado by Pepe
             $table->id();
             $table->timestamps();
         });

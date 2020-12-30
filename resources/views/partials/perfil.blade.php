@@ -10,6 +10,8 @@
 <p>Email: {{Auth::user()->email}} </p>
 <p>Tiempo</p>
 
+<br>
+<a href="{{url('/mis-ofertas/create')}}">Hacer una Oferta</a><br>
 <a href="{{url('/mis-ofertas')}}">Mis Ofertas</a><br>
 <a href="{{url('/servicios-contratados')}}">Servicios Contratados</a><br>
 

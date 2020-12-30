@@ -11,11 +11,11 @@ class Oferta extends Model
 
     protected $fillable = [
         'nombreOferta',
-        'idCategoria',
+//        'idCategoria',
         'tiempoDiarioOfrece',
         'fechaPuedeIniciar',
         'fechaDebeAcabar',
         'fotoOferta',
-        'idUser'
+//        'idUser'
     ];
 }
